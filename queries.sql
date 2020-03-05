@@ -1,31 +1,14 @@
 SELECT title
 FROM series
-WHERE has_won_awards = 1;
+WHERE rating > 2.5
+ORDER BY title DESC;
 
 SELECT title
 FROM series
-WHERE rating >= 2.5;
+WHERE seasons < 5
+ORDER BY seasons ASC;
 
 SELECT title
 FROM series
-WHERE country = 'NL' AND language = 'NL';
-
-SELECT title
-FROM series
-WHERE seasons <= 5;
-
-SELECT title
-FROM series
-ORDER BY rating DESC;
-
-SELECT title
-FROM series
-WHERE seasons < 3 OR seasons > 20;
-
-SELECT title
-FROM series
-WHERE title LIKE '%th%';
-
-SELECT title
-FROM series
-WHERE seasons != 3;
+WHERE rating < 3 OR rating > 20
+ORDER BY seasons AND country DESC;
